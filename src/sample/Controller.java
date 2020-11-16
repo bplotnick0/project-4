@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -32,8 +33,6 @@ public class Controller implements Initializable {
     @FXML
     TextArea orderPrice;
 
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("stage2.fxml"));
-    Controller2 control2 = new Controller2();
 
     Sandwhich sandwhich;
     Order order;
@@ -53,6 +52,8 @@ public class Controller implements Initializable {
 
 
     }
+
+
 
     
 
@@ -128,15 +129,14 @@ public class Controller implements Initializable {
         extraSelected.getItems().removeAll(selected);
         pickSandwhich();
 
-        control2.display(orderLine);
+
 
     }
 
-    public void showOrder(ActionEvent actionEvent) {
+    public void showOrder(ActionEvent actionEvent) throws IOException {
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("stage2.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
+            Parent root = FXMLLoader.load(getClass().getResource("stage2.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();
@@ -144,6 +144,11 @@ public class Controller implements Initializable {
         } catch(Exception e) {
             e.printStackTrace();
         }
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("stage2.fxml"));
+        loader.load();
+        Controller2 control2 = loader.getController();
+        control2.display(order);
     }
 
 
