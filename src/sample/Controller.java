@@ -135,20 +135,24 @@ public class Controller implements Initializable {
 
     public void showOrder(ActionEvent actionEvent) throws IOException {
 
+        Stage newStage = new Stage();
+
+        Parent root;
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("stage2.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("stage2.fxml"));
+            root = loader.load();
+            Controller2 controller = loader.getController();
+            controller.display(order);
 
-        } catch(Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
+            return;
         }
+        Scene sceneNewDate = new Scene(root);
+        newStage.setScene(sceneNewDate);
+        newStage.show();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("stage2.fxml"));
-        loader.load();
-        Controller2 control2 = loader.getController();
-        control2.display(order);
+
     }
 
 

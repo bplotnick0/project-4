@@ -12,6 +12,6 @@ public class Chicken extends Sandwhich {
 
     @Override
     public String toString() {
-        return "Chicken, Fried Chicken, Spicy Sauce, Pickles " + super.toString();
+        return "Chicken, Fried Chicken, Spicy Sauce, Pickles, " + super.toString();
     }
 }

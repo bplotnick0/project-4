@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"  xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="sample.Controller2">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
    <children>
       <AnchorPane layoutX="37.0" layoutY="36.0" prefHeight="215.0" prefWidth="526.0">
          <children>
-            <ListView fx:id="ordList" prefHeight="251.0" prefWidth="526.0" style="-fx-border-color: black;" />
+            <ListView fx:id="ordList" prefHeight="251.0" prefWidth="526.0" />
          </children>
       </AnchorPane>
       <GridPane layoutX="29.0" layoutY="345.0" prefHeight="30.0" prefWidth="526.0">
@@ -28,7 +28,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="sameOrd" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="Same Order Line" />
+            <Button mnemonicParsing="false" onAction="#copyOrder" prefHeight="25.0" prefWidth="115.0" text="Copy Order" />
             <Button fx:id="remOrd" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Remove Order Line" GridPane.columnIndex="1" />
             <Button fx:id="cleOrd" mnemonicParsing="false" text="Clear Order" GridPane.columnIndex="2" />
             <Button fx:id="savOrd" mnemonicParsing="false" text="Save Order to File" GridPane.columnIndex="3" />

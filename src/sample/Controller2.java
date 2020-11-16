@@ -1,12 +1,15 @@
 package sample;
 
 
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.scene.control.*;
+
 
 
 //import java.awt.*;
@@ -28,9 +31,11 @@ public class Controller2 implements Initializable {
 
     @FXML
     public void display(Order ord){
-
+        order = ord;
         for (int i = 0; i < ord.getOrderLines().size(); i++){
-            ordList.getItems().add(ord.getOrderLines().get(i));
+
+            System.out.println((ord.getOrderLines().get(i)).toString());
+            ordList.getItems().add((ord.getOrderLines().get(i)));
         }
 
     }
@@ -41,9 +46,15 @@ public class Controller2 implements Initializable {
 
     }
 
+    public void copyOrder(ActionEvent actionEvent) {
+        OrderLine selectedOrder = (OrderLine)ordList.getSelectionModel().getSelectedItem();
+        OrderLine copy = new OrderLine(order.lineNumber, selectedOrder.getSandwich(),selectedOrder.getPrice());
+        order.add(copy);
+        ordList.getItems().add(order.getOrderLines().get(order.lineNumber - 1));
+        order.lineNumber++;
 
 
-
+    }
 
 
 //    public void exportFile(ActionEvent event){

@@ -11,6 +11,10 @@ public class OrderLine {
         this.price = price;
     }
 
+    public OrderLine() {
+
+    }
+
     public int getLineNumber() {
         return lineNumber;
     }
@@ -37,6 +41,6 @@ public class OrderLine {
 
     @Override
     public String toString() {
-        return lineNumber + " " + sandwich.toString() + ", " + price;
+        return lineNumber + " " + sandwich.toString() + price;
     }
 }
