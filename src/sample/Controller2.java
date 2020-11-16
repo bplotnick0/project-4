@@ -54,7 +54,7 @@ public class Controller2 implements Initializable {
 
         try {
             FileWriter out = new FileWriter(targeFile);
-            out.write(Order.toString());
+            out.write();
             out.close();
 
         } catch (IOException e) {

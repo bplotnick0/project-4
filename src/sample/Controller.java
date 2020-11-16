@@ -32,6 +32,9 @@ public class Controller implements Initializable {
     @FXML
     TextArea orderPrice;
 
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("stage2.fxml"));
+    Controller2 control2 = new Controller2();
+
     Sandwhich sandwhich;
     Order order;
     ObservableList<Extra> extras = FXCollections.observableArrayList(Extra.values());
@@ -124,6 +127,8 @@ public class Controller implements Initializable {
         extraOptions.getItems().addAll(selected);
         extraSelected.getItems().removeAll(selected);
         pickSandwhich();
+
+        control2.display(orderLine);
 
     }
 
