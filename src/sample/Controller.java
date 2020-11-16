@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -49,8 +50,6 @@ public class Controller implements Initializable {
         orderPrice.appendText("8.99");
         sandwhich = new Chicken();
         order = new Order();
-
-
     }
 
 
