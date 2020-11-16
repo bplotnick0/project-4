@@ -29,8 +29,8 @@
         </rowConstraints>
          <children>
             <Button mnemonicParsing="false" onAction="#copyOrder" prefHeight="25.0" prefWidth="115.0" text="Copy Order" />
-            <Button fx:id="remOrd" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="Remove Order Line" GridPane.columnIndex="1" />
-            <Button fx:id="cleOrd" mnemonicParsing="false" text="Clear Order" GridPane.columnIndex="2" />
+            <Button fx:id="remOrd" mnemonicParsing="false" onAction="#removeOrder" prefHeight="25.0" prefWidth="123.0" text="Remove Order Line" GridPane.columnIndex="1" />
+            <Button fx:id="cleOrd" mnemonicParsing="false" onAction="#clearOrder" text="Clear Order" GridPane.columnIndex="2" />
             <Button fx:id="savOrd" mnemonicParsing="false" text="Save Order to File" GridPane.columnIndex="3" />
          </children>
       </GridPane>

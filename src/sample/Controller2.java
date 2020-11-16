@@ -56,6 +56,23 @@ public class Controller2 implements Initializable {
 
     }
 
+    public void removeOrder(ActionEvent actionEvent){
+        OrderLine selectedOrder = (OrderLine)ordList.getSelectionModel().getSelectedItem();
+        order.remove(selectedOrder);
+        ordList.getItems().remove(selectedOrder);
+
+    }
+
+    public void clearOrder(ActionEvent actionEvent){
+        for(int i =0; i < order.getOrderLines().size(); i++){
+            order.remove(order.getOrderLines().get(i));
+
+        }
+        ordList.getItems().clear();
+
+
+    }
+
 
 //    public void exportFile(ActionEvent event){
 //        FileChooser chooser = new FileChooser();

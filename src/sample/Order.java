@@ -20,7 +20,8 @@ public class Order implements Customizable {
 
     @Override
     public boolean remove(Object obj) {
-        return false;
+        orderLines.remove((OrderLine)obj);
+        return true;
     }
 
     public ArrayList<OrderLine> getOrderLines() {
