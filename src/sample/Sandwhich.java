@@ -10,9 +10,15 @@ public abstract class Sandwhich implements Customizable {
     protected ArrayList<Extra> extras;
 
     public abstract double price();
-    public String toString(){
-        String str = "Str";
-        return str;
+
+
+    @Override
+    public String toString() {
+        String xtras ="";
+        for(int i =0; i < extras.size(); i++){
+            xtras = xtras + extras.get(i) + ", ";
+        }
+        return xtras;
     }
 
     public Sandwhich(){

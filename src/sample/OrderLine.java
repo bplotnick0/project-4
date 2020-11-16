@@ -34,4 +34,9 @@ public class OrderLine {
     public void setSandwich(Sandwhich sandwich) {
         this.sandwich = sandwich;
     }
+
+    @Override
+    public String toString() {
+        return lineNumber + " " + sandwich.toString() + ", " + price;
+    }
 }

@@ -85,6 +85,7 @@ public class Controller implements Initializable {
             alert.showAndWait();
         } else {
             sandwhich.add(selected);
+            System.out.print(sandwhich.toString());
             extraSelected.getItems().addAll(selected);
             extraOptions.getItems().removeAll(selected);
             orderPrice.clear();
@@ -123,9 +124,11 @@ public class Controller implements Initializable {
         extraOptions.getItems().addAll(selected);
         extraSelected.getItems().removeAll(selected);
         pickSandwhich();
+
     }
 
     public void showOrder(ActionEvent actionEvent) {
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("stage2.fxml"));
             Parent root = (Parent) fxmlLoader.load();
