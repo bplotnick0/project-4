@@ -1,3 +1,7 @@
+/**
+ *Controller for the review order window (stage2)
+ * @Authors Michael Sherbine, Ben Plotnick
+ */
 package sample;
 
 
@@ -33,6 +37,9 @@ public class Controller2 {
 
     Order order;
 
+    /**
+     * Updates the price and displays it in the textArea
+     */
     @FXML
     public void updatePrice(){
         double totPrice = 0;
@@ -42,7 +49,10 @@ public class Controller2 {
         totDisplay.appendText(new DecimalFormat("#.##").format(totPrice));
     }
 
-
+    /**
+     * Displays all accounts in a given order to the window
+     * @param ord
+     */
     @FXML
     public void display(Order ord){
         order = ord;
@@ -55,7 +65,10 @@ public class Controller2 {
 
     }
 
-
+    /**
+     * You select an item in the listview and this methods duplicates it.
+     * @param actionEvent
+     */
     public void copyOrder(ActionEvent actionEvent) {
         try {
             OrderLine selectedOrder = (OrderLine) ordList.getSelectionModel().getSelectedItem();
@@ -77,6 +90,10 @@ public class Controller2 {
 
     }
 
+    /**
+     * Removes an orderLine that you select
+     * @param actionEvent
+     */
     public void removeOrder(ActionEvent actionEvent) {
         try{
             OrderLine selectedOrder = (OrderLine) ordList.getSelectionModel().getSelectedItem();
@@ -104,6 +121,10 @@ public class Controller2 {
 
     }
 
+    /**
+     * Clears the whole order from the review window
+     * @param actionEvent
+     */
     public void clearOrder(ActionEvent actionEvent){
         order.getOrderLines().clear();
         ordList.getItems().clear();
@@ -116,7 +137,10 @@ public class Controller2 {
 
     }
 
-
+    /**
+     * Saves the order to a separate file.
+     * @param event
+     */
     public void exportFile(ActionEvent event){
 
         double totPrice = 0;
@@ -152,6 +176,10 @@ public class Controller2 {
 
     }
 
+    /**
+     * Closes the review order window.
+     * @param actionEvent
+     */
     public void close(ActionEvent actionEvent) {
 
         Stage stage = (Stage) closeButton2.getScene().getWindow();
