@@ -14,14 +14,20 @@ public class Order implements Customizable {
     }
     @Override
     public boolean add(Object obj) {
-        orderLines.add((OrderLine)obj);
-        return true;
+        if(!(obj instanceof OrderLine)){
+            return false;
+        }
+        return orderLines.add((OrderLine)obj);
+
     }
 
     @Override
     public boolean remove(Object obj) {
-        orderLines.remove((OrderLine)obj);
-        return true;
+        if(!(obj instanceof OrderLine)){
+            return false;
+        }
+        return orderLines.remove((OrderLine)obj);
+
     }
 
     public ArrayList<OrderLine> getOrderLines() {

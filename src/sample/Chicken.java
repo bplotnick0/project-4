@@ -2,9 +2,10 @@ package sample;
 
 public class Chicken extends Sandwhich {
 
-
-
-
+    /**
+     * returns price of sandwich with extras
+     * @return
+     */
     @Override
     public double price() {
         return 8.99 + super.PER_EXTRA * (super.extras.size());
@@ -12,6 +13,6 @@ public class Chicken extends Sandwhich {
 
     @Override
     public String toString() {
-        return "Chicken, Fried Chicken, Spicy Sauce, Pickles, " + super.toString();
+        return "Chicken Sandwhich, Fried Chicken, Spicy Sauce, Pickles, " + super.toString();
     }
 }

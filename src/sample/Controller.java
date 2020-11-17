@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -47,16 +48,19 @@ public class Controller implements Initializable {
         extraOptions.setItems(extras);
         extraOptions.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         includedIngredients.appendText("Fried Chicken\nSpicy Sauce\nPickles");
-        orderPrice.appendText("8.99");
+        orderPrice.appendText("$8.99");
         sandwhich = new Chicken();
         order = new Order();
+
+
+
+
     }
 
 
-
-    
-
-
+    /**
+     * Called when a sandwich is selected
+     */
     public void pickSandwhich() {
         includedIngredients.clear();
         if(selectSandwhich.getValue().equals("Chicken")){
@@ -75,10 +79,15 @@ public class Controller implements Initializable {
             sandwhich = new Beef();
         }
         orderPrice.clear();
-        orderPrice.appendText(String.valueOf(sandwhich.price()));
+        String price = new DecimalFormat("#.##").format(sandwhich.price());
+        orderPrice.appendText("$"+price);
     }
 
-    public void addExtras(ActionEvent actionEvent) {
+    /**
+     *adds extras to sandwich's extras list and to listview when user clicks add button
+     */
+
+    public void addExtras() {
         ObservableList<Extra> selected = extraOptions.getSelectionModel().getSelectedItems();
         if(extraSelected.getItems().size() > 5 || selected.size() > 6){
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -92,38 +101,51 @@ public class Controller implements Initializable {
             extraSelected.getItems().addAll(selected);
             extraOptions.getItems().removeAll(selected);
             orderPrice.clear();
-            orderPrice.appendText(String.valueOf(sandwhich.price()));
+            String price = new DecimalFormat("#.##").format(sandwhich.price());
+            orderPrice.appendText("$"+price);
         }
     }
 
-    public void removeExtras(ActionEvent actionEvent) {
+    /**
+     *removes extras from sandwich's extra list and from listview when user presses remove button
+     */
+    public void removeExtras() {
         Object selected = extraSelected.getSelectionModel().getSelectedItem();
         sandwhich.remove(selected);
         orderPrice.clear();
-        orderPrice.appendText(String.valueOf(sandwhich.price()));
+        String price = new DecimalFormat("#.##").format(sandwhich.price());
+        orderPrice.appendText("$"+price);
         extraSelected.getItems().remove(selected);
         extraOptions.getItems().add(selected);
     }
 
+    /**
+     * clears extras from sandwich's extras list and from listview
+     */
     public void clearSelected() {
         ObservableList<Extra> selected = extraSelected.getItems();
         for(int i =0; i < selected.size(); i++){
             sandwhich.remove(selected.get(i));
         }
         orderPrice.clear();
-        orderPrice.appendText(String.valueOf(sandwhich.price()));
+        String price = new DecimalFormat("#.##").format(sandwhich.price());
+        orderPrice.appendText("$"+price);
         extraOptions.getItems().addAll(selected);
         extraSelected.getItems().removeAll(selected);
 
 
     }
 
-    public void addToOrder(ActionEvent actionEvent) {
+    /**
+     * adds sandwich to order
+     */
+    public void addToOrder() {
         OrderLine orderLine = new OrderLine(order.lineNumber++, sandwhich, sandwhich.price());
         order.add(orderLine);
         ObservableList<Extra> selected = extraSelected.getItems();
         orderPrice.clear();
-        orderPrice.appendText(String.valueOf(sandwhich.price()));
+        String price = new DecimalFormat("#.##").format(sandwhich.price());
+        orderPrice.appendText("$"+price);
         extraOptions.getItems().addAll(selected);
         extraSelected.getItems().removeAll(selected);
         pickSandwhich();
@@ -132,21 +154,23 @@ public class Controller implements Initializable {
 
     }
 
-    public void showOrder(ActionEvent actionEvent) throws IOException {
+    /**
+     *
+     * opens second window and calls display method to show sandwiches on order.
+     * @throws IOException if window cannot open
+     */
+    public void showOrder() throws IOException {
 
         Stage newStage = new Stage();
 
         Parent root;
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("stage2.fxml"));
-            root = loader.load();
-            Controller2 controller = loader.getController();
-            controller.display(order);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("stage2.fxml"));
+        root = loader.load();
+        Controller2 controller = loader.getController();
+        controller.display(order);
+
+
         Scene sceneNewDate = new Scene(root);
         newStage.setScene(sceneNewDate);
         newStage.show();
