@@ -17,12 +17,13 @@
             <ListView fx:id="ordList" prefHeight="251.0" prefWidth="526.0" />
          </children>
       </AnchorPane>
-      <GridPane layoutX="29.0" layoutY="345.0" prefHeight="30.0" prefWidth="526.0">
+      <GridPane layoutX="10.0" layoutY="345.0" prefHeight="30.0" prefWidth="580.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="123.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="149.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="88.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="136.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="140.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="89.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="114.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="98.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -31,11 +32,12 @@
             <Button mnemonicParsing="false" onAction="#copyOrder" prefHeight="25.0" prefWidth="115.0" text="Copy Order" />
             <Button fx:id="remOrd" mnemonicParsing="false" onAction="#removeOrder" prefHeight="25.0" prefWidth="123.0" text="Remove Order Line" GridPane.columnIndex="1" />
             <Button fx:id="cleOrd" mnemonicParsing="false" onAction="#clearOrder" text="Clear Order" GridPane.columnIndex="2" />
-            <Button fx:id="savOrd" mnemonicParsing="false" text="Save Order to File" GridPane.columnIndex="3" />
+            <Button fx:id="savOrd" mnemonicParsing="false" onAction="#exportFile" text="Save Order to File" GridPane.columnIndex="3" />
+            <Button fx:id="closeButton2" mnemonicParsing="false" onAction="#close" text="Close Window" GridPane.columnIndex="4" />
          </children>
       </GridPane>
       <Text layoutX="249.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Details" />
       <Text layoutX="343.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
-      <TextArea fx:id="totDisplay" layoutX="384.0" layoutY="299.0" prefHeight="9.0" prefWidth="135.0" style="-fx-border-color: black;" />
+      <TextArea fx:id="totDisplay" layoutX="384.0" layoutY="299.0" prefHeight="9.0" prefWidth="135.0" />
    </children>
 </Pane>

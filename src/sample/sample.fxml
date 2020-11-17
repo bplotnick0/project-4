@@ -11,7 +11,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <ComboBox fx:id="selectSandwhich" layoutX="28.0" layoutY="28.0" onAction="#pickSandwhich" prefHeight="25.0" prefWidth="183.0" promptText="Select a Sandwhich type" />
-      <ImageView fx:id="sandwichImage" fitHeight="128.0" fitWidth="145.0" layoutX="422.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="sandwichImage" fitHeight="82.0" fitWidth="145.0" layoutX="422.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
       <ListView fx:id="extraOptions" layoutX="14.0" layoutY="162.0" prefHeight="197.0" prefWidth="145.0" />
       <ListView fx:id="extraSelected" layoutX="279.0" layoutY="162.0" prefHeight="197.0" prefWidth="145.0" />
       <TextArea fx:id="orderPrice" editable="false" layoutX="435.0" layoutY="213.0" prefHeight="71.0" prefWidth="145.0" />
