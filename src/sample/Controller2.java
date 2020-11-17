@@ -83,8 +83,17 @@ public class Controller2 {
             order.remove(selectedOrder);
             ordList.getItems().remove(selectedOrder);
 
+            for(int i = 0; i<order.getOrderLines().size(); i++){
+                order.getOrderLines().get(i).setLineNumber(i+1);
+            }
+
+            ordList.getItems().clear();
+            display(order);
+
             totDisplay.clear();
             updatePrice();
+
+
         }catch (NullPointerException e){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning!!");
