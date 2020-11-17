@@ -1,3 +1,7 @@
+/**
+ * interface for add and remove methods
+ * @author Ben Plotnick, Michael Sherbine
+ */
 package sample;
 
 public interface Customizable {

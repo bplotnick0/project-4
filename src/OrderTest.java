@@ -1,3 +1,7 @@
+/**
+ * Order class Junit test
+ * @author Ben Plotnick, Michael Sherbine
+ */
 import sample.Chicken;
 import sample.Order;
 import sample.OrderLine;

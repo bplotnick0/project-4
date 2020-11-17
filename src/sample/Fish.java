@@ -1,3 +1,7 @@
+/**
+ * Fish sandwich class
+ * @author Ben Plotnick, Michael Sherbine
+ */
 package sample;
 
 public class Fish extends Sandwhich {

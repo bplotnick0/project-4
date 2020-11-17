@@ -1,3 +1,7 @@
+/**
+ * Class for a order, holds list of sandwiches for the order
+ * @author Ben Plotnick, Michael Sherbine
+ */
 package sample;
 
 import java.util.ArrayList;

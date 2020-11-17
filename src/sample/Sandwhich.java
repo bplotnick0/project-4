@@ -1,4 +1,7 @@
-package sample;
+/**
+ * Sandwich super class
+ * @author Ben Plotnick, Michael Sherbine
+ */package sample;
 
 import javafx.collections.ObservableList;
 

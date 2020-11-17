@@ -1,3 +1,7 @@
+/**
+ * individual order to be added to entire order
+ * @author Ben Plotnick, Michael Sherbine
+ */
 package sample;
 
 public class OrderLine {

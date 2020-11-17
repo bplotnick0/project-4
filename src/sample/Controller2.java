@@ -57,8 +57,6 @@ public class Controller2 {
     public void display(Order ord){
         order = ord;
         for (int i = 0; i < ord.getOrderLines().size(); i++){
-
-            System.out.println((ord.getOrderLines().get(i)).toString());
             ordList.getItems().add((ord.getOrderLines().get(i)));
         }
         updatePrice();
@@ -106,9 +104,9 @@ public class Controller2 {
 
             ordList.getItems().clear();
             display(order);
-
             totDisplay.clear();
             updatePrice();
+            order.lineNumber--;
 
 
         }catch (NullPointerException e){

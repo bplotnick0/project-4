@@ -1,3 +1,7 @@
+/**
+ * Chicken sandwhich class
+ * @author Ben Plotnick, Michael Sherbine
+ */
 package sample;
 
 public class Chicken extends Sandwhich {

@@ -1,3 +1,7 @@
+/**
+ * Controller class for sample.fxml
+ * @author Ben Plotnick, Michael Sherbine
+ */
 package sample;
 
 import javafx.collections.FXCollections;
@@ -97,7 +101,6 @@ public class Controller implements Initializable {
             alert.showAndWait();
         } else {
             sandwhich.add(selected);
-            System.out.print(sandwhich.toString());
             extraSelected.getItems().addAll(selected);
             extraOptions.getItems().removeAll(selected);
             orderPrice.clear();

@@ -1,3 +1,7 @@
+/**
+ * Beef sandwich class
+ * @author Ben Plotnick, Michael Sherbine
+ */
 package sample;
 
 public class Beef extends Sandwhich {
